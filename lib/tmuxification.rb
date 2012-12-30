@@ -10,13 +10,13 @@ module Tmuxification
     method_options :project_name => :string, :template_name => :string
     def create
       setup
-      @project_name = options[:project_name] { Dir.pwd.split('/').last }
+      @project_name = options.fetch('project_name') { Dir.pwd.split('/').last }
       @project_root = Dir.pwd
-      @template_name = options[:template_name] { 'default' }
+      @template_name = options.fetch('template_name') { 'default' }
 
       template template_file, project_file
       chmod project_file, 777 # ha!
-      append_to_file shellrc_file, "source #{project_file}"
+      append_to_file shellrc_file, "source #{project_file}\n"
     end
 
     desc 'destroy', 'Destroys a tmux project'
