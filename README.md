@@ -1,7 +1,7 @@
 # Tmuxification
 
-Generator for tmux configurations, by default it opens two windows, one
-containing vim in your project root.
+Generator for tmux configurations. The default template starts a tmux session
+with two windows in your project root, vim is started in the first window.
 
 ## Tested on
 
@@ -14,18 +14,37 @@ containing vim in your project root.
 
 ## Usage
 
-    # create a new tmux project
+### Create a new tmux project
 
     cd ~/code/my_project
     tmuxification create
 
-    # start the project
+### Start the project (from any directory)
 
     start_my_project
 
+### Templates
+
+You can create your own templates, just drop them in `.tmuxinator` with a
+filename such as `basic.tmux.erb` and specify your template as such:
+
+    tmuxification create --template-name=basic
+
+You can also edit the `default.tmux.erb` which is used when no `template-name` is
+specified.
+
+### Project name
+
+By default the tmux project is named after the root directory of the project, you
+can specify a different project name as such:
+
+    cd ~/code/my_project
+    tmuxification create --project-name=foobar
+    start_foobar
+
 ## Warning
 
-This will append a line per project to your `.zshrc` file.
+Every project created will append a line per project to your `.zshrc` file.
 
 ## Contributing
 
