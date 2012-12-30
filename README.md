@@ -23,6 +23,10 @@ containing vim in your project root.
 
     start_my_project
 
+## Warning
+
+This will append a line per project to your `.zshrc` file.
+
 ## Contributing
 
 1. Fork it
