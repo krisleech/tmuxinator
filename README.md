@@ -25,7 +25,7 @@ with two windows in your project root, vim is started in the first window.
 
 ### Templates
 
-You can create your own templates, just drop them in `.tmuxinator` with a
+You can create your own templates, just drop them in `~/.tmuxinator` with a
 filename such as `basic.tmux.erb` and specify your template as such:
 
     tmuxification create --template-name=basic
