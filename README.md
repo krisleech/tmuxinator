@@ -21,7 +21,7 @@ containing vim in your project root.
 
     # start the project
 
-    my_project
+    start_my_project
 
 ## Contributing
 
