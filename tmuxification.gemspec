@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Tmuxification::VERSION
   gem.authors       = ["Kris Leech"]
   gem.email         = ["kris.leech@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = 'Generate tmux configurations for your projects'
+  gem.summary       = 'Generate tmux configurations for your projects'
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
