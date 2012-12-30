@@ -1,24 +1,27 @@
 # Tmuxification
 
-TODO: Write a gem description
+Generator for tmux configurations, by default it opens two windows, one
+containing vim in your project root.
+
+## Tested on
+
+* Ruby 1.9
+* zsh
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'tmuxification'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install tmuxification
 
 ## Usage
 
-TODO: Write usage instructions here
+    # create a new tmux project
+
+    cd ~/code/my_project
+    tmuxification create
+
+    # start the project
+
+    my_project
 
 ## Contributing
 
