@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
+
 require "rubygems"
 require "thor"
 require 'tmuxification'
-
-# examples:
-# $ tmuxification create
-# $ tmuxification list
 
 Tmuxification::App.start
