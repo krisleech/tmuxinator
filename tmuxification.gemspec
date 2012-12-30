@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["kris.leech@gmail.com"]
   gem.description   = 'Generate tmux configurations for your projects'
   gem.summary       = 'Generate tmux configurations for your projects'
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/krisleech/tmuxinator"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
