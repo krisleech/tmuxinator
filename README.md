@@ -18,6 +18,7 @@ with two windows in your project root, vim is started in the first window.
 
     $ cd ~/code/my_project
     $ tmuxification create
+    $ exec zsh
 
 ### Start the project (from any directory)
 
