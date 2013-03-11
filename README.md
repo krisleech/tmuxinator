@@ -25,6 +25,15 @@ with two windows in your project root, vim is started in the first window.
 
 Note: The above will also autocomplete.
 
+### List all your projects
+
+    $ tmuxification list
+
+### Delete a project
+
+    $ cd ~/code/my_project
+    $ tmuxification destroy
+
 ### Templates
 
 You can create your own templates, just drop them in `~/.tmuxinator` with a
@@ -32,9 +41,10 @@ filename such as `basic.tmux.erb` and specify your template as such:
 
     $ tmuxification create --template-name=basic
 
-You can also edit the `default.tmux.erb` which is used when no `template-name` is
-specified. Note when the first project is created the default template is
-chosen based on the default shell, as per $SHELL.
+You can also edit the `default.{zsh,fish}.tmux.erb` templates which are used when 
+no `template-name` is specified. 
+
+The default template is chosen based on the default shell.
 
 ### Project name
 
@@ -47,7 +57,8 @@ can specify a different project name as such:
 
 ## Warning
 
-Every project created will append a line per project to your `.zshrc` file.
+Every project created will append a line per project to your `.zshrc` or
+`config.fish` file.
 
 ## Contributing
 
