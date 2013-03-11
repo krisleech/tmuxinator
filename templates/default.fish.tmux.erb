@@ -1,5 +1,5 @@
 function start_<%= @project_name  %>
-  let -l BASE "<%= @project_root %>"
+  set -l BASE "<%= @project_root %>"
   cd $BASE
 
   tmux start-server

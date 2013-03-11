@@ -12,11 +12,11 @@ module Tmuxification
       setup
       @project_name = options.fetch('project_name') { Dir.pwd.split('/').last }
       @project_root = Dir.pwd
-      @template_name = options.fetch('template_name') { 'default' }
+      @template_name = options.fetch('template_name') { "default.#{current_shell}" }
 
       template template_file, project_file
       chmod project_file, 777 # ha!
-      append_to_file shellrc_file, "source #{project_file}\n"
+      append_to_file shellrc_file, "#{shell_source_command} #{project_file}\n"
     end
 
     desc 'destroy', 'Destroys a tmux project'
@@ -35,8 +35,10 @@ module Tmuxification
     desc 'setup', 'Create folder for tmux projects'
     def setup
       empty_directory config_directory
-      @template_name = 'default'
-      copy_file 'templates/default.tmux.erb', template_file unless File.exists?(template_file)
+      @template_name = 'default.zsh'
+      copy_file 'templates/default.zsh.tmux.erb', template_file unless File.exists?(template_file)
+      @template_name = 'default.fish'
+      copy_file 'templates/default.fish.tmux.erb', template_file unless File.exists?(template_file)
     end
 
     desc 'teardown', 'Delete all projects and containing folder'
@@ -52,7 +54,13 @@ module Tmuxification
     private
 
     def shellrc_file
-      File.expand_path '~/.zshrc'
+      File.expand_path '~/.zshrc' if zsh?
+      File.expand_path '~/.config/fish/config.fish' if fish?
+    end
+
+    def shell_source_command
+      "source" if zsh?
+      "." if fish?
     end
 
     def template_file
@@ -66,6 +74,18 @@ module Tmuxification
     # or set destination_root
     def config_directory
       File.expand_path '~/.tmuxification'
+    end
+
+    def zsh?
+      current_shell == 'zsh'
+    end
+
+    def fish?
+      current_shell == 'fish'
+    end
+
+    def current_shell
+      ENV['SHELL'].split('/').last
     end
   end
 end

@@ -33,7 +33,8 @@ filename such as `basic.tmux.erb` and specify your template as such:
     $ tmuxification create --template-name=basic
 
 You can also edit the `default.tmux.erb` which is used when no `template-name` is
-specified.
+specified. Note when the first project is created the default template is
+chosen based on the default shell, as per $SHELL.
 
 ### Project name
 
