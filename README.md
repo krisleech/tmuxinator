@@ -18,7 +18,9 @@ with two windows in your project root, vim is started in the first window.
 
     $ cd ~/code/my_project
     $ tmuxification create
-    $ exec zsh
+
+You will need to reload your shell config file. The easiest way is to replace 
+the current process with a new instance of your shell, e.g `exec zsh`.
 
 ### Start the project (from any directory)
 
