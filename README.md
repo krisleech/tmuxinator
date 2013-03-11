@@ -6,7 +6,7 @@ with two windows in your project root, vim is started in the first window.
 ## Tested on
 
 * Ruby 1.9
-* zsh
+* zsh & fish shells
 
 ## Installation
 
