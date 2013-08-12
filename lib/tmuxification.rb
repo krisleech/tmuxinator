@@ -16,8 +16,7 @@ module Tmuxification
 
       template template_file, project_file
       chmod project_file, 777 # ha!
-      rc_file = shellrc_files.find { |rc_file| File.exists?(rc_file) }
-      append_to_file rc_file, "source #{project_file}\n"
+      append_to_file shellrc_file, "source #{project_file}\n"
     end
 
     desc 'destroy', 'Destroys a tmux project'
@@ -52,8 +51,8 @@ module Tmuxification
 
     private
 
-    def shellrc_files
-      ['~/.projects', '~/.zshrc', '~/.bashrc'].map { |path| File.expand_path(path) }
+    def shellrc_file
+      File.expand_path '~/.zshrc'
     end
 
     def template_file
