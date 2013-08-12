@@ -54,8 +54,10 @@ module Tmuxification
     private
 
     def shellrc_file
-      File.expand_path '~/.zshrc' if zsh?
-      File.expand_path '~/.config/fish/config.fish' if fish?
+      projects_rc = File.expand_path('~/.projects')
+      return File.expand_path projects_rc                  if File.exists?(projects_rc)
+      return File.expand_path '~/.zshrc'                   if zsh?
+      return File.expand_path '~/.config/fish/config.fish' if fish?
     end
 
     def shell_source_command

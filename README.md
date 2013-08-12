@@ -60,8 +60,9 @@ can specify a different project name as such:
 
 ## Warning
 
-Every project created will append a line per project to your `.zshrc` or
-`config.fish` file.
+Every project created will append a line per project to `.projects`, `.zshrc` or
+`config.fish` file. The `.projects` is used if it exists otherwise the rc file
+for th current shell is used.
 
 ## Contributing
 
