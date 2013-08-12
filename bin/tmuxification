@@ -2,6 +2,6 @@
 
 require "rubygems"
 require "thor"
-require 'tmuxification'
+require_relative '../lib/tmuxification'
 
 Tmuxification::App.start
