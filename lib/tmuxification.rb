@@ -61,8 +61,8 @@ module Tmuxification
     end
 
     def shell_source_command
-      "source" if zsh?
-      "." if fish?
+      return "source" if zsh?
+      return "." if fish?
     end
 
     def template_file
