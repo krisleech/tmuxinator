@@ -6,7 +6,7 @@ with two windows in your project root, vim is started in the first window.
 ## Tested on
 
 * Ruby 1.9
-* zsh
+* zsh & fish shells
 
 ## Installation
 
@@ -18,13 +18,24 @@ with two windows in your project root, vim is started in the first window.
 
     $ cd ~/code/my_project
     $ tmuxification create
-    $ exec zsh
+
+You will need to reload your shell config file. The easiest way is to replace 
+the current process with a new instance of your shell, e.g `exec zsh`.
 
 ### Start the project (from any directory)
 
     $ start_my_project
 
 Note: The above will also autocomplete.
+
+### List all your projects
+
+    $ tmuxification list
+
+### Delete a project
+
+    $ cd ~/code/my_project
+    $ tmuxification destroy
 
 ### Templates
 
@@ -33,8 +44,10 @@ filename such as `basic.tmux.erb` and specify your template as such:
 
     $ tmuxification create --template-name=basic
 
-You can also edit the `default.tmux.erb` which is used when no `template-name` is
-specified.
+You can also edit the `default.{zsh,fish}.tmux.erb` templates which are used when 
+no `template-name` is specified. 
+
+The default template is chosen based on the default shell.
 
 ### Project name
 
@@ -47,7 +60,8 @@ can specify a different project name as such:
 
 ## Warning
 
-Every project created will append a line per project to your `.zshrc` file.
+Every project created will append a line per project to your `.zshrc` or
+`config.fish` file.
 
 ## Contributing
 
