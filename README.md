@@ -62,7 +62,7 @@ can specify a different project name as such:
 
 Every project created will append a line per project to `.projects`, `.zshrc` or
 `config.fish` file. The `.projects` is used if it exists otherwise the rc file
-for th current shell is used.
+for the current shell is used.
 
 ## Contributing
 
